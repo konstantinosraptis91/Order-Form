@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+body {
+    background: #FFF;
+}
+
+div#container {
+    width: 1020px;
+    margin: auto;
+    background: #FFF;
+    box-shadow: 0 0 10px 0px rgba(12, 3, 25, 0.6);
+}
+
+@font-face {
+    font-family: "MyriadPro-Regular";
+    src: url("/font/MyriadPro-Regular.otf") format('truetype');
+} 
+
+@font-face {
+    font-family: "MyriadPro-Light";
+    src: url("/font/MyriadPro-Light.otf") format('truetype');
+} 
+
+/*FORM*/
+
+#invoiceForm {
+    color: #303333;
+    /*background: yellow;*/
+}
+
+h4 {
+    font-family: MyriadPro-Regular;
+    /*background: red;*/
+}
+
+.label1 {
+    font-family: MyriadPro-Light;
+    /*background: blue;*/
+}
+
+div#customer_container, div#supplier_container, div#order_container, div#trans_comp_container {
+    border: 1px solid #E67E22;
+}
+
+/*CLEAR FIX*/
+
+.clearfix {
+    clear: both;
+}
+
+/*RED STAR*/
+
+.red_star {
+    color: #E14447;
+    margin-left: 3px;
+    font-family: MyriadPro-Light;
+}
