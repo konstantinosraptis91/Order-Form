@@ -29,12 +29,24 @@ div#container {
 
 #invoiceForm {
     color: #303333;
-    /*background: yellow;*/
+}
+
+h4, h3 {
+    font-family: MyriadPro-Regular;
+    padding: 5px;
 }
 
 h4 {
-    font-family: MyriadPro-Regular;
-    /*background: red;*/
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+h3 {
+    text-align: center; 
+}
+
+.title {
+    margin-top: 10px;
 }
 
 .label1 {
@@ -42,8 +54,48 @@ h4 {
     /*background: blue;*/
 }
 
+.p1 {
+    display: inline-block;
+    margin-left: 20px;
+    padding-bottom: 15px;
+}
+
 div#customer_container, div#supplier_container, div#order_container, div#trans_comp_container {
+    margin: 20px 40px;
+    padding: 5px;
+}
+
+.input_class {
+    width: 200px;
+    height: 30px;
     border: 1px solid #E67E22;
+    border-radius: 5px;
+    font-family: MyriadPro-Light;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+#submit {
+    width: 100%;
+    text-align: center;
+}
+
+.submit_class {
+    width: 115px;
+    height: 38px;
+    font-size: 16px;
+    padding: 3px 5px 3px 5px;
+    background: #FFF;
+    border: 1px solid #E67E22;
+    border-radius: 5px;
+    color: #E67E22;
+    cursor: pointer;
+    font-family: MyriadPro-Light;
+}
+
+#required_id {
+    margin-left: 15px;
+    margin-bottom: 5px;
 }
 
 /*CLEAR FIX*/
@@ -57,5 +109,19 @@ div#customer_container, div#supplier_container, div#order_container, div#trans_c
 .red_star {
     color: #E14447;
     margin-left: 3px;
+    font-family: MyriadPro-Light;
+}
+
+/*FOOTER*/
+
+footer {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #E67E22;
+}
+
+footer p {
+    color: #FFF;
     font-family: MyriadPro-Light;
 }
