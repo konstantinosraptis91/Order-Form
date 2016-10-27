@@ -6,8 +6,12 @@
 package invoice.dto;
 
 import java.util.Date;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.Email;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
@@ -16,44 +20,43 @@ import javax.validation.constraints.NotNull;
 public class InvoiceForm {
 
     // Customer Information
-    @NotNull
+    @Size(min=2, max=30)
     private String cmFullName;
     @NotNull
     private String cmAddress;
     @NotNull
     private String cmPhoneNumber;
-    @NotNull
+    @NotNull @Email
     private String cmEmail;
 
     // Supplier Information
-    @NotNull
+    @Size(min=2, max=30)
     private String supFullName;
     @NotNull
     private String supAddress;
     @NotNull
     private String supPhoneNumber;
-    @NotNull
+    @NotNull @Email
     private String supEmail;
 
     // Order Information
-    @NotNull
+    @Size(min=2, max=30)
     private String orProductName;
-    @NotNull
-    @Min(1)
+    @NotNull @Min(1)
     private Integer orQuantity;
     @NotNull
     private String orUnitCost;
-    @NotNull
+    @NotNull @DateTimeFormat(pattern="yyyy-MM-dd") @Future
     private Date orShpippingDate;
 
     // Transportation Company Information
-    @NotNull
+    @Size(min=2, max=30)
     private String tcName;
     @NotNull
     private String tcAddress;
     @NotNull
     private String tcPhoneNumber;
-    @NotNull
+    @NotNull @Email
     private String tcEmail;
 
     public InvoiceForm() {

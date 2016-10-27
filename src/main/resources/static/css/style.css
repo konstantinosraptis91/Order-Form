@@ -112,6 +112,16 @@ div#customer_container, div#supplier_container, div#order_container, div#trans_c
     font-family: MyriadPro-Light;
 }
 
+/*ERROR*/
+
+.error {
+    float: left;
+    color: red;
+    font-family: MyriadPro-Light;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
 /*FOOTER*/
 
 footer {
