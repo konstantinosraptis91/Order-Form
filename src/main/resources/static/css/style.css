@@ -98,6 +98,13 @@ div#customer_container, div#supplier_container, div#order_container, div#trans_c
     margin-bottom: 5px;
 }
 
+/*RESULTS*/
+
+#download {
+   font-family: MyriadPro-Light;
+   margin: 50px 20px;
+}
+
 /*CLEAR FIX*/
 
 .clearfix {
@@ -107,7 +114,7 @@ div#customer_container, div#supplier_container, div#order_container, div#trans_c
 /*RED STAR*/
 
 .red_star {
-    color: #E14447;
+    color: red;
     margin-left: 3px;
     font-family: MyriadPro-Light;
 }
