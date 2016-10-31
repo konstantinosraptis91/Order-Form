@@ -11,7 +11,6 @@ package invoice.utils;
  */
 public class Constants {
     
-    // public static final String STORAGE_PATH = "C:\\Users\\konstantinos\\Desktop\\invoice.xml";
-    public static final String STORAGE_PATH = "invoice.xml";
+    public static final String STORAGE_PATH = "form.xml";
     
 }
