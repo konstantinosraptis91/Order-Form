@@ -5,6 +5,8 @@
  */
 package invoice.utils;
 
+import java.text.SimpleDateFormat;
+
 /**
  *
  * @author konstantinos
@@ -12,5 +14,6 @@ package invoice.utils;
 public class Constants {
     
     public static final String STORAGE_PATH = "form.xml";
+    public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");    
     
 }

@@ -5,15 +5,18 @@
  */
 package invoice;
 
-import invoice.dto.InvoiceForm;
-import invoice.utils.XMLDocBuilder;
-import java.io.FileNotFoundException;
-import java.text.SimpleDateFormat;
+import invoice.dto.Form;
+import invoice.dto.FormObj;
+import invoice.utils.Constants;
+import invoice.utils.FormUtils;
+import java.io.File;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 
 import org.springframework.stereotype.Controller;
@@ -38,21 +41,32 @@ public class WebController extends WebMvcConfigurerAdapter {
     }
 
     @GetMapping("/")
-    public String showForm(InvoiceForm invoiceForm) {
+    public String showForm(FormObj invoiceForm) {
         return "form";
     }
 
     @PostMapping("/")
-    public String checkInvoiceInfo(@Valid InvoiceForm invoiceForm, BindingResult bindingResult, HttpServletResponse resp) {
+    public String checkInvoiceInfo(@Valid FormObj formObj, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
             System.err.println("Form has errors");
             return "form";
         } else {
             try {
-                XMLDocBuilder.create(invoice.utils.Constants.STORAGE_PATH, invoiceForm);
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(WebController.class.getName()).log(Level.SEVERE, null, ex);
+                // DOM MODEL SOLUTION
+                // XMLDocBuilder.create(invoice.utils.Constants.STORAGE_PATH, invoiceForm);
+                
+                // JAXB SOLUTION
+                File f = new File(invoice.utils.Constants.STORAGE_PATH);
+                JAXBContext jaxbContext = JAXBContext.newInstance(Form.class);
+                Marshaller marshaller = jaxbContext.createMarshaller();
+                marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+                marshaller.marshal(FormUtils.parseForm(formObj), f);
+                
+//            } catch (FileNotFoundException e) {
+//                Logger.getLogger(WebController.class.getName()).log(Level.SEVERE, null, e);
+            } catch (JAXBException e) {
+		Logger.getLogger(WebController.class.getName()).log(Level.SEVERE, null, e);
             }
         }
         return "redirect:/results";
@@ -60,10 +74,8 @@ public class WebController extends WebMvcConfigurerAdapter {
 
     @InitBinder
     public void initBinder(WebDataBinder binder) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        sdf.setLenient(true);
-        binder.registerCustomEditor(Date.class, new CustomDateEditor(sdf, true));
-        // You can register other Custom Editors with the WebDataBinder, like CustomNumberEditor for Integers and Longs, or StringTrimmerEditor for Strings
+        Constants.DATE_FORMAT.setLenient(true);
+        binder.registerCustomEditor(Date.class, new CustomDateEditor(Constants.DATE_FORMAT, true));
     }
 
 }

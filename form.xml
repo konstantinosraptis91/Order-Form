@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<form xmlns="http://www.w3schools.com">
+    <customer>
+        <fullName>Customer Full Name</fullName>
+        <address>Customer Address</address>
+        <phoneNumber>2100000000</phoneNumber>
+        <email>customer@customer.com</email>
+    </customer>
+    <order>
+        <product>Product Name</product>
+        <quantity>2</quantity>
+        <unitCost>2.5</unitCost>
+        <shippingDate>2017-02-15+02:00</shippingDate>
+    </order>
+    <supplier>
+        <fullName>Supplier Full Name</fullName>
+        <address>Supplier Address</address>
+        <phoneNumber>2100000000</phoneNumber>
+        <email>supplier@supplier.com</email>
+    </supplier>
+    <transporter>
+        <name>Transporation Company Name</name>
+        <address>Transporation Company Address</address>
+        <phoneNumber>2100000000</phoneNumber>
+        <email>tc@tc.com</email>
+    </transporter>
+</form>

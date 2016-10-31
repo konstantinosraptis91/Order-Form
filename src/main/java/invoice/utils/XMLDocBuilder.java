@@ -5,7 +5,7 @@
  */
 package invoice.utils;
 
-import invoice.dto.InvoiceForm;
+import invoice.dto.FormObj;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -35,7 +35,7 @@ import org.w3c.dom.DOMException;
 public class XMLDocBuilder {
 
     // create xml doc
-    public static void create(String fileName, InvoiceForm invoice) throws FileNotFoundException {
+    public static void create(String fileName, FormObj invoice) throws FileNotFoundException {
         Document doc;
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         File f = null;
@@ -76,7 +76,7 @@ public class XMLDocBuilder {
             // Set elements text
             orderProductElement.setTextContent(invoice.getOrProductName());
             orderQuantityElement.setTextContent(invoice.getOrQuantity().toString());
-            orderUnicCostElement.setTextContent(invoice.getOrUnitCost());
+            orderUnicCostElement.setTextContent(String.valueOf(invoice.getOrUnitCost()));
             orderShippingDateElement.setTextContent(invoice.getOrShpippingDate().toString());
             // Append to ORDER element
             orderElement.appendChild(orderProductElement);
