@@ -17,6 +17,7 @@ import javax.validation.Valid;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 
 import org.springframework.stereotype.Controller;
@@ -34,7 +35,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  */
 @Controller
 public class WebController extends WebMvcConfigurerAdapter {
-
+    
+    private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(WebController.class);
+    
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/results").setViewName("results");
@@ -50,6 +53,7 @@ public class WebController extends WebMvcConfigurerAdapter {
 
         if (bindingResult.hasErrors()) {
             System.err.println("Form has errors");
+            LOGGER.error("form has errors.", Constants.LOG_DATE_FORMAT.format(new Date()));
             return "form";
         } else {
             try {
