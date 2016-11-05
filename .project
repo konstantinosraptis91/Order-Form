@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Invoice</name>
-	<comment>Project Invoice created by Buildship.</comment>
+	<name>invoice</name>
+	<comment>Project invoice created by Buildship.</comment>
 	<projects>
 	</projects>
 	<buildSpec>
