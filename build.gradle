@@ -16,7 +16,7 @@ apply plugin: 'application'
 mainClassName = 'order.form.Application'
 
 jar {
-    baseName = 'order-form'
+    baseName = 'Order-Form'
     version =  '0.2.0'
 }
 
