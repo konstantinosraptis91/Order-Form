@@ -1,18 +1,18 @@
 package order.form.utils;
 
-import order.form.dto.Form;
-import order.form.dto.Form.Customer;
-import order.form.dto.Form.Order;
-import order.form.dto.Form.Supplier;
-import order.form.dto.Form.Transporter;
 import order.form.dto.FormObj;
-import order.form.dto.ObjectFactory;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.GregorianCalendar;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
+import order.form.dto.Form;
+import order.form.dto.Form.Customer;
+import order.form.dto.Form.Order;
+import order.form.dto.Form.Supplier;
+import order.form.dto.Form.Transporter;
+import order.form.dto.ObjectFactory;
 
 /**
  *

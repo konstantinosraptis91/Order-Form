@@ -1,5 +1,5 @@
-<?xml version="1.0"?>
-<xs:schema xmlns="http://www.w3schools.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="order:form:dto" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	
 	<xs:element name="form">
 		<xs:complexType>
@@ -8,6 +8,7 @@
 				<xs:element name="customer">
 					<xs:complexType>
 						<xs:sequence>
+                                                        <xs:element name="id" type="xs:integer"/>
 							<xs:element name="fullName" type="xs:string"/>
 							<xs:element name="address" type="xs:string"/>
 							<xs:element name="phoneNumber" type="xs:string"/>
@@ -19,6 +20,7 @@
 				<xs:element name="order">
 					<xs:complexType>
 						<xs:sequence>
+                                                        <xs:element name="id" type="xs:integer"/>
 							<xs:element name="product" type="xs:string"/>
 							<xs:element name="quantity" type="xs:positiveInteger"/>
 							<xs:element name="unitCost" type="xs:decimal"/>
@@ -30,6 +32,7 @@
 				<xs:element name="supplier">
 					<xs:complexType>
 						<xs:sequence>
+                                                        <xs:element name="id" type="xs:integer"/>
 							<xs:element name="fullName" type="xs:string"/>
 							<xs:element name="address" type="xs:string"/>
 							<xs:element name="phoneNumber" type="xs:string"/>
@@ -41,6 +44,7 @@
 				<xs:element name="transporter">
 					<xs:complexType>
 						<xs:sequence>
+                                                        <xs:element name="id" type="xs:integer"/>
 							<xs:element name="name" type="xs:string"/>
 							<xs:element name="address" type="xs:string"/>
 							<xs:element name="phoneNumber" type="xs:string"/>
